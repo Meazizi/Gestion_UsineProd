@@ -1,0 +1,42 @@
+{
+    "lignes_production": ["Pavarotti", "Scala", "Verdi"],
+    "plan_commandes": [
+        {
+            "reference": "C001",
+            "commandes": [
+                {"variete": "Tortil", "quantite": 5000},
+                {"variete": "Cheveux", "quantite": 5000},
+                {"variete": "Cannelloni", "quantite": 5000},
+                {"variete": "Ravioli", "quantite": 5000},
+                {"variete": "Alphabet", "quantite": 5000}
+            ]
+        },
+        {
+            "reference": "C002",
+            "commandes": [
+                {"variete": "Cannelloni", "quantite": 6000},
+                {"variete": "Ravioli", "quantite": 6000}
+            ]
+        },
+        {
+            "reference": "C003",
+            "commandes": [
+                {"variete": "Alphabet", "quantite": 3000},
+                {"variete": "Tortil", "quantite": 3000},
+                {"variete": "Cheveux", "quantite": 3000}
+            ]
+        }
+    ],
+    "plan_production": [
+        {"reference": "P001", "variete": "Tortil", "quantite": 7200},
+        {"reference": "P002", "variete": "Cheveux", "quantite": 3000},
+        {"reference": "P003", "variete": "Cannelloni", "quantite": 4000},
+        {"reference": "P004", "variete": "Ravioli", "quantite": 30000},
+        {"reference": "P005", "variete": "Alphabet", "quantite": 4800},
+        {"reference": "P006", "variete": "Cannelloni", "quantite": 2000},
+        {"reference": "P007", "variete": "Ravioli", "quantite": 12000},
+        {"reference": "P008", "variete": "Alphabet", "quantite": 6400},
+        {"reference": "P009", "variete": "Tortil", "quantite": 9600},
+        {"reference": "P010", "variete": "Cheveux", "quantite": 3000}
+    ]
+}
