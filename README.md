@@ -1,2 +1,2 @@
 # Gestion_UsineProd
-A small Object Oriented program that simulates the management of a factory that produces pasta
+Un petit programme orienté objet qui simule la production d'une usine de pâtes.
