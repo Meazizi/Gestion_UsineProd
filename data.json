@@ -1,5 +1,37 @@
 {
     "lignes_production": ["Pavarotti", "Scala", "Verdi"],
+    "varietes_pates": [
+        {
+            "nom": "Tortil",
+            "temps_setup": 2,
+            "cartons_par_jour": 1200,
+            "stock_initial": 40000
+        },
+        {
+            "nom": "Cheveux",
+            "temps_setup": 4,
+            "cartons_par_jour": 600,
+            "stock_initial": 20000
+        },
+        {
+            "nom": "Cannelloni",
+            "temps_setup": 5,
+            "cartons_par_jour": 2000,
+            "stock_initial": 10000
+        },
+        {
+            "nom": "Ravioli",
+            "temps_setup": 1,
+            "cartons_par_jour": 3000,
+            "stock_initial": 30000
+        },
+        {
+            "nom": "Alphabet",
+            "temps_setup": 3,
+            "cartons_par_jour": 800,
+            "stock_initial": 5000
+        }
+    ],
     "plan_commandes": [
         {
             "reference": "C001",
