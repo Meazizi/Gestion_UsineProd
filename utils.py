@@ -3,6 +3,7 @@ from VarietePate import VarietePate
 from PlanProduction import PlanProduction
 from OrdreProduction import OrdreProduction
 from Commande import Commande
+from Approvisionnement import Approvisionnement
 
 
 def charger_donnees():
@@ -53,3 +54,14 @@ def creer_commandes(data, varietes):
         )
         commandes.append(commande)
     return commandes
+
+
+def creer_approvisionnement(data):
+    """Crée les objets Approvisionnement à partir des données."""
+    approvisionnements = []
+    for appro_data in data["approvisionnements"]:
+        appro = Approvisionnement(
+            reference=appro_data["reference"], quantite=appro_data["quantite"]
+        )
+        approvisionnements.append(appro)
+    return approvisionnements

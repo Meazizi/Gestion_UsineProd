@@ -5,6 +5,7 @@ from utils import (
     creer_varietes,
     creer_plan_production,
     creer_commandes,
+    creer_approvisionnement,
 )
 
 # Import des classes
@@ -22,19 +23,13 @@ def main():
     varietes = creer_varietes(data)
     plan_production = creer_plan_production(data, varietes)
     commandes = creer_commandes(data, varietes)
+    approvisionnements = creer_approvisionnement(data)
 
     entrepot = Entrepot(
         nom="Entrepôt principal",
         stocks={variete: variete.stock_initial for variete in varietes.values()},
         stock_oeufs=1500000,
     )
-
-    approvisionnements = [
-        Approvisionnement("A001", 50000),
-        Approvisionnement("A002", 40000),
-        Approvisionnement("A003", 20000),
-        Approvisionnement("A004", 50000),
-    ]
 
     lignes = [LigneProduction(nom) for nom in data["lignes_production"]]
 

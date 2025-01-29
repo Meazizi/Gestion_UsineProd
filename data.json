@@ -82,5 +82,11 @@
         {"reference": "P008", "variete": "Alphabet", "quantite": 6400},
         {"reference": "P009", "variete": "Tortil", "quantite": 9600},
         {"reference": "P010", "variete": "Cheveux", "quantite": 3000}
+    ],
+    "approvisionnements": [
+        {"reference": "A001", "quantite": 50000},
+        {"reference": "A002", "quantite": 40000},
+        {"reference": "A003", "quantite": 20000},
+        {"reference": "A004", "quantite": 50000}
     ]
 }
