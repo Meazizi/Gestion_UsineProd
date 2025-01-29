@@ -53,7 +53,7 @@ def main():
                 print(f"Traitement de la commande {commande.identifiant}:")
                 commande.traiter_commande(entrepot)
 
-            print("\n=== Approvisionnement en oeufs et farine ===")
+            print("\n=== Approvisionnement ingrédients ===")
             if approvisionnements:
                 approvisionnement = approvisionnements.pop(0)
                 entrepot.approvisionner_oeufs(approvisionnement.quantite_oeufs)
