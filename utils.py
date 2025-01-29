@@ -22,6 +22,7 @@ def creer_varietes(data):
             cartons_par_jour=variete_data["cartons_par_jour"],
             stock_initial=variete_data["stock_initial"],
             oeufs_par_carton=variete_data["oeufs_par_carton"],
+            farine_par_carton=variete_data["farine_par_carton"],
         )
         varietes[variete.nom] = variete
     return varietes
@@ -61,7 +62,11 @@ def creer_approvisionnement(data):
     approvisionnements = []
     for appro_data in data["approvisionnements"]:
         appro = Approvisionnement(
-            reference=appro_data["reference"], quantite=appro_data["quantite"]
+            reference=appro_data["reference"],
+            quantite_oeufs=appro_data[
+                "quantite_oeufs"
+            ],  # On suppose que la même quantité est utilisée pour les œufs et la farine pour l'exemple
+            quantite_farine=appro_data["quantite_farine"],
         )
         approvisionnements.append(appro)
     return approvisionnements

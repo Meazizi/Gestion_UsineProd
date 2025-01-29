@@ -24,7 +24,14 @@ class LigneProduction:
         if self.ordre_en_cours and not self.en_pause:
             variete = self.ordre_en_cours.variete
             oeufs_requis = variete.cartons_par_jour * variete.oeufs_par_carton
-            if entrepot.utiliser_oeufs(oeufs_requis):
+            farine_requise = (
+                variete.cartons_par_jour * variete.farine_par_carton
+            )  # Quantité de farine requise
+
+            # Vérifier la disponibilité des œufs et de la farine
+            if entrepot.utiliser_oeufs(oeufs_requis) and entrepot.utiliser_farine(
+                farine_requise
+            ):
                 entrepot.ajouter_stock(variete, variete.cartons_par_jour)
                 print(
                     f"{self.nom} a produit {variete.cartons_par_jour} cartons de {variete.nom}."
@@ -35,15 +42,23 @@ class LigneProduction:
                     self.ordre_en_cours = None
             else:
                 print(
-                    f"{self.nom} en pause : pas assez d'œufs pour produire {variete.nom}."
+                    f"{self.nom} en pause : pas assez d'ingrédients pour produire {variete.nom}."
                 )
                 self.en_pause = True
         elif self.en_pause:
+            # On vérifie si on a assez d'ingrédients pour reprendre la production
             oeufs_requis = (
                 self.variete_actuelle.cartons_par_jour
                 * self.variete_actuelle.oeufs_par_carton
             )
-            if entrepot.utiliser_oeufs(oeufs_requis):
+            farine_requise = (
+                self.variete_actuelle.cartons_par_jour
+                * self.variete_actuelle.farine_par_carton
+            )
+
+            if entrepot.utiliser_oeufs(oeufs_requis) and entrepot.utiliser_farine(
+                farine_requise
+            ):
                 self.en_pause = False
                 print(
                     f"{self.nom} reprend la production de {self.variete_actuelle.nom}."

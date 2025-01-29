@@ -1,5 +1,3 @@
-import json
-from datetime import datetime, timedelta
 from utils import (
     charger_donnees,
     creer_varietes,
@@ -29,6 +27,7 @@ def main():
         nom="Entrepôt principal",
         stocks={variete: variete.stock_initial for variete in varietes.values()},
         stock_oeufs=1500000,
+        stock_farine=100000,
     )
 
     lignes = [LigneProduction(nom) for nom in data["lignes_production"]]
@@ -47,18 +46,24 @@ def main():
 
         entrepot.afficher_stock()
 
-        # 📦 À la fin de chaque semaine (tous les 7 jours), on gère les commandes et l'approvisionnement en œufs
+        # À la fin de chaque semaine (tous les 7 jours), on gère les commandes et l'approvisionnement en ingrédients
         if (jour + 1) % 7 == 0:
             print("\n=== Fin de semaine : Traitement des commandes ===")
             for commande in commandes:
                 print(f"Traitement de la commande {commande.identifiant}:")
                 commande.traiter_commande(entrepot)
 
-            print("\n=== Approvisionnement en oeufs ===")
+            print("\n=== Approvisionnement en oeufs et farine ===")
             if approvisionnements:
                 approvisionnement = approvisionnements.pop(0)
-                entrepot.approvisionner_oeufs(approvisionnement.quantite)
-                print(f"🛒 {approvisionnement.quantite} oeufs 🥚 ajoutés au stock.")
+                entrepot.approvisionner_oeufs(approvisionnement.quantite_oeufs)
+                entrepot.approvisionner_farine(approvisionnement.quantite_farine)
+                print(
+                    f"🛒 {approvisionnement.quantite_oeufs} oeufs 🥚 ajoutés au stock."
+                )
+                print(
+                    f"🛒 {approvisionnement.quantite_farine} farine 🌾 ajoutés au stock."
+                )
 
     print("\n=== État final des stocks ===")
     entrepot.afficher_stock()

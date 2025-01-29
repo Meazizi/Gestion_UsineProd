@@ -6,35 +6,40 @@
             "temps_setup": 2,
             "cartons_par_jour": 1200,
             "stock_initial": 40000,
-            "oeufs_par_carton": 20
+            "oeufs_par_carton": 20,
+            "farine_par_carton": 5
         },
         {
             "nom": "Cheveux",
             "temps_setup": 4,
             "cartons_par_jour": 600,
             "stock_initial": 20000,
-            "oeufs_par_carton": 40
+            "oeufs_par_carton": 40,
+            "farine_par_carton": 2
         },
         {
             "nom": "Cannelloni",
             "temps_setup": 5,
             "cartons_par_jour": 2000,
             "stock_initial": 10000,
-            "oeufs_par_carton": 50
+            "oeufs_par_carton": 50,
+            "farine_par_carton": 3
         },
         {
             "nom": "Ravioli",
             "temps_setup": 1,
             "cartons_par_jour": 3000,
             "stock_initial": 30000,
-            "oeufs_par_carton": 10
+            "oeufs_par_carton": 10,
+            "farine_par_carton": 4
         },
         {
             "nom": "Alphabet",
             "temps_setup": 3,
             "cartons_par_jour": 800,
             "stock_initial": 5000,
-            "oeufs_par_carton": 30
+            "oeufs_par_carton": 30,
+            "farine_par_carton" : 1
         }
     ],
     "plan_commandes": [
@@ -84,9 +89,25 @@
         {"reference": "P010", "variete": "Cheveux", "quantite": 3000}
     ],
     "approvisionnements": [
-        {"reference": "A001", "quantite": 50000},
-        {"reference": "A002", "quantite": 40000},
-        {"reference": "A003", "quantite": 20000},
-        {"reference": "A004", "quantite": 50000}
+        {
+            "reference": "A001",
+            "quantite_oeufs": 50000,
+            "quantite_farine": 5000
+        },
+        {
+            "reference": "A002",
+            "quantite_oeufs": 40000,
+            "quantite_farine": 4000
+        },
+        {
+            "reference": "A003",
+            "quantite_oeufs": 20000,
+            "quantite_farine": 2000
+        },
+        {
+            "reference": "A004",
+            "quantite_oeufs": 50000,
+            "quantite_farine": 5000
+        }
     ]
 }
